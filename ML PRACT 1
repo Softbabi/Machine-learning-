@@ -1,49 +1,35 @@
 from collections import Counter
 
 def calculate_mean(data):
-
-return sum(data)/len(data)
+    return sum(data) / len(data)
 
 def calculate_median(data):
+    data_sorted = sorted(data)
+    n = len(data)
+    mid = n // 2
 
-data_sorted sorted(data)
-
-n = len(data)
-
-mid = n//2
-
-if n % 2 == 0:
-
-median = (data_sorted[mid-1] + data_sorted[mid])/2
-
-else:
-
-median = data_sorted[mid]
-
-return median
+    if n % 2 == 0:
+        median = (data_sorted[mid - 1] + data_sorted[mid]) / 2
+    else:
+        median = data_sorted[mid]
+        
+    return median
 
 def calculate_mode(data):
+    count = Counter(data)
+    max_count = max(count.values())
+    mode = [k for k, v in count.items() if v == max_count]
 
-count = Counter(data)
+    return mode
 
-max_count = max(count.values())
-
-mode = [k for k, v in count.items() if v == max_count]
-
-return mode
-
-# Example data
 
 data = [1, 2, 2, 3, 4, 5, 5, 5, 6, 7, 8, 9, 9]
 
 mean = calculate_mean(data)
-
 median = calculate_median(data)
-
-mode calculate_mode(data)
+mode = calculate_mode(data)  # Fixed the syntax error here
 
 print("Mean:", mean)
-
 print("Median:", median)
-
 print("Mode:", mode)
+
