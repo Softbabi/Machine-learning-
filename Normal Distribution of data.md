@@ -10,11 +10,14 @@ mean = 0
 
 #Mean of the distribution
 
-std dev = 1 #Standard deviation of the distribution
+std dev = 1 
+#Standard deviation of the distribution
 
-num_samples = 100 #Number of samples to generate
+num_samples = 100 
+#Number of samples to generate
 
-# Generate random samples from a normal distribution data = np.random.normal(loc-mean, scale=std_dev, size=num_samples)
+# Generate random samples from a normal distribution 
+data = np.random.normal(loc-mean, scale=std_dev, size=num_samples)
 
 #Create a histogram of the data
 
