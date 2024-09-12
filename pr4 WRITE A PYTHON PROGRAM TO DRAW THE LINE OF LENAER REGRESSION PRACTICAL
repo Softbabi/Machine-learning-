@@ -1,0 +1,35 @@
+
+
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Example data
+x = [5, 7, 8, 7, 2, 17, 2, 9, 4, 11, 12, 9, 6]
+y = [99, 86, 87, 88, 111, 86, 183, 87, 94, 78, 77, 85, 90]
+
+# Perform Linear Regression
+slope, intercept, r_value, p_value, std_err = stats.linregress(x, y)
+
+# Define the Linear Regression function
+def myfunc(x):
+    return slope * x + intercept
+
+# Apply the Linear Regression function to x values
+mymodel = list(map(myfunc, x))
+
+# Create scatter plot
+plt.scatter(x, y, color='black', marker='o', label='Data points')
+
+# Plot the Linear Regression Line
+plt.plot(x, mymodel, color='red', label='Regression line')
+
+# Add titles and Labels
+plt.title('Linear Regression Example')
+plt.xlabel('X values')
+plt.ylabel('Y values')
+
+# Add legend
+plt.legend()
+
+# Show the plot
+plt.show()
