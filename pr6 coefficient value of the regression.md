@@ -1,35 +1,20 @@
-# write python program to print the import matplotlib.pyplot as plt
-from scipy import stats
+# write a python program to print the coefficient value of the regression
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
 
 # Data
-x = [5, 7, 8, 7, 2, 17, 2, 9, 4, 11, 12, 9, 6]
-y = [99, 86, 87, 88, 111, 86, 103, 87, 94, 78, 77, 85, 86]
+x = np.array([[1], [2], [3], [4], [5]])
+y = np.array([2, 4, 6, 8, 18])
 
-# Perform linear regression
-slope, intercept, r, p, std_err = stats.linregress(x, y)
+# Create and fit the model
+model = LinearRegression()
+model.fit(x, y)
 
-# Function to predict speed
-def predict_speed(age):
-    return slope * age + intercept
+# Get coefficients and intercept
+coefficients = model.coef_
+intercept = model.intercept_
 
-# Predict speed for a 5-year-old car
-predicted_speed = predict_speed(5)
-print(f'Predicted Speed for a 5-year-old car: {predicted_speed:.2f} units')
-
-import matplotlib.pyplot as plt
-from scipy import stats
-
-# Data
-x = [5, 7, 8, 7, 2, 17, 2, 9, 4, 11, 12, 9, 6]
-y = [99, 86, 87, 88, 111, 86, 103, 87, 94, 78, 77, 85, 86]
-
-# Perform linear regression
-slope, intercept, r, p, std_err = stats.linregress(x, y)
-
-# Function to predict speed
-def predict_speed(age):
-    return slope * age + intercept
-
-# Predict speed for a 5-year-old car
-predicted_speed = predict_speed(5)
-print(f'Predicted Speed for a 5-year-old car: {predicted_speed:.2f} units')
+# Print results
+print("Coefficients:", coefficients)
+print("Intercept:", intercept)
