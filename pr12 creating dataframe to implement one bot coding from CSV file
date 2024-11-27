@@ -1,0 +1,31 @@
+import pandas as pd from sklearn.preprocessing import OneHat.Encoder
+
+#Sample data
+
+data (
+
+"Customer ID: [1, 2, 3, 4, 5, 6],
+
+"Age": [25, 30, 22, 35, 28, 18), "Gender": ["Male', 'Female', 'Male', 'Female, Male', 'Male']
+
+In []
+
+}
+
+df Create Dutufrone pd.DataFrame(data)
+
+print("Original DataFrame:")
+
+print (df.head())
+
+Zdentify categorical columns
+
+categorical_columns df.select dtypes (include=[object]).columns
+
+#One-Hot Encoding
+
+df encoded pd.get dummies(df, columns categorical columns, drop first=True)
+
+print("\nDatafrane after One-Hot Encoding:")
+
+print (df encoded.head())
