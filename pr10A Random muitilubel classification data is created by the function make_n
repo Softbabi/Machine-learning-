@@ -1,0 +1,13 @@
+# Importing the necessary library
+from sklearn.datasets import make_multilabel_classification
+
+# Generating random multilabel classification data
+X, y = make_multilabel_classification(n_samples=10, n_features=10, n_classes=3, n_labels=2, random_state=1)
+
+# Printing the shapes of X and y
+print("Shapes of X and y:", X.shape, y.shape)
+
+# Loop to print specific instances of the data
+for i in range(10):  # Adjusted range to match the number of samples (10)
+    print("Feature vector:", X[i])
+    print("Labels:", y[i])
